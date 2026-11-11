@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Smart App Banner test</title>
+
+  <!-- ↓ app-id= の後ろの数字を、試したいアプリのIDに書き換える -->
+  <meta name="apple-itunes-app" content="app-id=0000000000">
+
+  <style>
+    :root { color-scheme: light dark; }
+    body { font-family: -apple-system, sans-serif; margin: 24px; line-height: 1.7; }
+    code { background: rgba(127,127,127,.2); padding: 2px 6px; border-radius: 4px; }
+  </style>
+</head>
+<body>
+  <h1>Smart App Banner test</h1>
+  <p>設定中のタグ: <code id="tag"></code></p>
+  <ul>
+    <li>iPhoneのSafari・通常タブで開く（プライベートブラウズ不可）</li>
+    <li>バナーを×で閉じると、このページでは再表示されなくなる</li>
+  </ul>
+  <script>
+    document.getElementById('tag').textContent =
+      document.querySelector('meta[name="apple-itunes-app"]').content;
+  </script>
+</body>
+</html>
